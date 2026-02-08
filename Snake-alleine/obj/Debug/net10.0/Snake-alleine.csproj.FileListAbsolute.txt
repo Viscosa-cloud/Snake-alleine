@@ -1,0 +1,14 @@
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\bin\Debug\net10.0\Snake-alleine.exe
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\bin\Debug\net10.0\Snake-alleine.deps.json
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\bin\Debug\net10.0\Snake-alleine.runtimeconfig.json
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\bin\Debug\net10.0\Snake-alleine.dll
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\bin\Debug\net10.0\Snake-alleine.pdb
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.AssemblyInfoInputs.cache
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.AssemblyInfo.cs
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.csproj.CoreCompileInputs.cache
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.dll
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\refint\Snake-alleine.dll
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.pdb
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\Snake-alleine.genruntimeconfig.cache
+C:\Users\Julia\source\repos\Snake-alleine\Snake-alleine\obj\Debug\net10.0\ref\Snake-alleine.dll
