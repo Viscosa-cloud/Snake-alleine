@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace SnakeGame
 {
-    class Game
+    class Game  // Main game logic and loop
     {
         private int width, height, offsetTop = 6;
         private int score;
@@ -15,7 +15,7 @@ namespace SnakeGame
         private Food food = new Food();
         private HighScoreManager hs = new HighScoreManager();
 
-        public void Start()
+        public void Start()  //Startpunkt des Spiels
         {
             Console.CursorVisible = false;
             Console.OutputEncoding = System.Text.Encoding.UTF8;
@@ -30,11 +30,11 @@ namespace SnakeGame
             }
         }
 
-        private void ShowLevelMenu()
+        private void ShowLevelMenu()   // Level-Auswahlmenü
         {
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Gray;
-            string[] menu = {
+            Console.Clear();  // Bildschirm löschen
+            Console.ForegroundColor = ConsoleColor.Gray;  // Textfarbe setzen
+            string[] menu = {   // Menü-Layout
                 "╔══════════════════════════════════════════╗",
                 "║          S N A K E   M E N Ü             ║",
                 "╠══════════════════════════════════════════╣",
@@ -55,8 +55,8 @@ namespace SnakeGame
                 SafeDraw(startX, startY + i, menu[i]);
             }
 
-            bool valid = false;
-            while (!valid)
+            bool valid = false;   // Gültigkeitsprüfung für Eingabe
+            while (!valid)   // Warte auf gültige Eingabe
             {
                 var key = Console.ReadKey(true).Key;
                 if (key == ConsoleKey.D1 || key == ConsoleKey.NumPad1) { currentLevel = 1; speed = 130; valid = true; }
@@ -65,7 +65,7 @@ namespace SnakeGame
             }
         }
 
-        private void Setup()
+        private void Setup()  // Spiel-Setup
         {
             UpdateSize();
             score = 0;
@@ -77,7 +77,7 @@ namespace SnakeGame
             food.Draw(offsetTop);
         }
 
-        private void Run()
+        private void Run()   // Hauptspiel-Schleife
         {
             while (true)
             {
