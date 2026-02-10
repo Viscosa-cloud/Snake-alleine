@@ -2,13 +2,13 @@
 
 namespace SnakeGame
 {
-    class HighScoreManager
+    class HighScoreManager // Highscore-Manager, der den Highscore verwaltet und speichert
     {
         private string filePath = "highscore.txt";
         public int Score { get; private set; }
         public bool NewRecordAchieved { get; set; } = false;
 
-        public void Load()
+        public void Load()  // Lädt den Highscore aus der Datei, wenn sie existiert, andernfalls wird der Highscore auf 0 gesetzt
         {
             if (File.Exists(filePath))
             {
@@ -19,7 +19,7 @@ namespace SnakeGame
             NewRecordAchieved = false;
         }
 
-        public void Save(int currentScore)
+        public void Save(int currentScore) // Speichert den Highscore in der Datei, wenn der aktuelle Score höher ist als der gespeicherte Highscore
         {
             if (currentScore > Score)
             {

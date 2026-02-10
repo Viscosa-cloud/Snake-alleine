@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Snake_alleine
 {
-    class Snake
+    class Snake  // Klasse für die Schlange, enthält die Logik für Bewegung und Kollisionserkennung
     {
-        public List<Position> Body { get; private set; } = new List<Position>();
-        public Direction CurrentDirection { get; set; } = Direction.Right;
+        public List<Position> Body { get; private set; } = new List<Position>();  // Liste der Positionen der Schlangensegmente, wobei das erste Element der Kopf ist
+        public Direction CurrentDirection { get; set; } = Direction.Right;  // Aktuelle Bewegungsrichtung der Schlange, standardmäßig nach rechts
 
-        public Snake(int startX, int startY)
+        public Snake(int startX, int startY)  // Konstruktor, der die Schlange mit einer Anfangsposition und drei Segmenten erstellt
         {
             // Start mit 3 Segmenten
             Body.Add(new Position(startX, startY));
@@ -17,7 +17,7 @@ namespace Snake_alleine
             Body.Add(new Position(startX - 2, startY));
         }
 
-        public void Move(bool grow)
+        public void Move(bool grow)  // Methode zum Bewegen der Schlange, die den Kopf in die aktuelle Richtung bewegt und das letzte Segment entfernt, es sei denn, die Schlange soll wachsen (z.B. nach dem Essen)
         {
             Position head = Body[0];
             Position newHead = new Position(head.X, head.Y);
@@ -34,7 +34,7 @@ namespace Snake_alleine
             if (!grow) Body.RemoveAt(Body.Count - 1);
         }
 
-        public bool CheckCollision(int width, int height)
+        public bool CheckCollision(int width, int height)  // Methode zur Überprüfung von Kollisionen, sowohl mit dem Rahmen als auch mit sich selbst
         {
             Position head = Body[0];
             // Kollision mit Rahmen (Rahmen ist bei 0 und width/height)

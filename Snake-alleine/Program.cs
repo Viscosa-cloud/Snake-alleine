@@ -5,7 +5,7 @@ namespace SnakeGame
 {
     class Program
     {
-        static void Main()
+        static void Main()  // Main-Methode, der Einstiegspunkt des Programms
         {
             // Startet das Spiel
             Game snakeGame = new Game();

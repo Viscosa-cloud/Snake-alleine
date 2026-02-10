@@ -129,7 +129,7 @@ namespace SnakeGame
             }
         }
 
-        private void FlashScreen()
+        private void FlashScreen()  // Bildschirm kurz aufhellen für Power-Up-Effekt
         {
             Console.ForegroundColor = ConsoleColor.White;
             DrawBorders();
@@ -138,7 +138,7 @@ namespace SnakeGame
             DrawBorders();
         }
 
-        private void CheckForNewHighscore()
+        private void CheckForNewHighscore()  // Überprüft, ob ein neuer Highscore erreicht wurde
         {
             if (score > hs.Score && !hs.NewRecordAchieved)
             {
@@ -149,7 +149,7 @@ namespace SnakeGame
             }
         }
 
-        private void HandleInput()
+        private void HandleInput()  // Verarbeitet die Benutzereingaben für die Steuerung der Schlange
         {
             var key = Console.ReadKey(true).Key;
             switch (key)
@@ -162,14 +162,14 @@ namespace SnakeGame
             }
         }
 
-        private void Render()
+        private void Render()  // Zeichnet die Schlange auf dem Bildschirm
         {
             // Zeichnet nur den neuen Kopf der Schlange
             Console.ForegroundColor = GetLevelColor();
             SafeDraw(snake.Body[0].X * 2, snake.Body[0].Y + offsetTop, "██");
         }
 
-        private ConsoleColor GetLevelColor()
+        private ConsoleColor GetLevelColor()  // Gibt die Farbe basierend auf dem aktuellen Level und Highscore zurück 
         {
             if (hs.NewRecordAchieved) return ConsoleColor.Yellow;
             if (score >= 100) return ConsoleColor.Magenta;
@@ -177,14 +177,14 @@ namespace SnakeGame
             return ConsoleColor.Green;
         }
 
-        private void UpdateSize()
+        private void UpdateSize() // Berechnet die Spielfeldgröße basierend auf der Konsolengröße
         {
             int availableWidth = Console.WindowWidth - 2;
             width = availableWidth / 2;
             height = Console.WindowHeight - offsetTop - 2;
         }
 
-        private void DrawInterface()
+        private void DrawInterface() // Zeichnet die statische Benutzeroberfläche mit Score, Level und Highscore
         {
             Console.ForegroundColor = ConsoleColor.Gray;
             SafeDraw(2, 1, "╔══════════════════════════════════════════╗");
@@ -194,7 +194,7 @@ namespace SnakeGame
             DrawBorders();
         }
 
-        private void DrawBorders()
+        private void DrawBorders() // Zeichnet die Spielfeldgrenzen
         {
             for (int i = 0; i <= width * 2; i++)
             {
@@ -208,7 +208,7 @@ namespace SnakeGame
             }
         }
 
-        private void UpdateScoreUI()
+        private void UpdateScoreUI()  // Aktualisiert die Anzeige von Score und Highscore, hebt den Score hervor, wenn ein neuer Rekord erreicht wurde
         {
             Console.ForegroundColor = hs.NewRecordAchieved ? ConsoleColor.Yellow : ConsoleColor.White;
             SafeDraw(12, 2, score.ToString("D4"));
@@ -218,7 +218,7 @@ namespace SnakeGame
             }
         }
 
-        private void GameOverScreen()
+        private void GameOverScreen()  // Zeigt den Game-Over-Bildschirm an, speichert den Highscore und wartet auf die Eingabe zum Neustart
         {
             hs.Save(score);
             Console.ForegroundColor = ConsoleColor.Red;
@@ -237,7 +237,7 @@ namespace SnakeGame
             while (Console.ReadKey(true).Key != ConsoleKey.Enter) { }
         }
 
-        public static void SafeDraw(int x, int y, string s)
+        public static void SafeDraw(int x, int y, string s)  // Zeichnet Text an einer bestimmten Position, überprüft vorher die Grenzen der Konsole
         {
             if (x >= 0 && x < Console.BufferWidth && y >= 0 && y < Console.BufferHeight)
             {

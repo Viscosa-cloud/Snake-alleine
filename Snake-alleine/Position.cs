@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Snake_alleine
 {
-    public struct Position
+    public struct Position  // Struktur für die Position von Schlangensegmenten und Essen, enthält X- und Y-Koordinaten
     {
         public int X;
         public int Y;
@@ -12,6 +12,6 @@ namespace Snake_alleine
     }
 
     // Richtungs-Enum
-    public enum Direction { Up, Down, Left, Right }
+    public enum Direction { Up, Down, Left, Right }  // Enum für die Bewegungsrichtung der Schlange, mit den vier möglichen Richtungen: oben, unten, links und rechts
 }
 

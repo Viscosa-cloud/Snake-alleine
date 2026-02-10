@@ -5,13 +5,13 @@ using System.Linq;
 
 namespace SnakeGame
 {
-    class Food
+    class Food  // Klasse für das Essen (Apfel und Spezial-Essen)
     {
-        public Position Pos { get; private set; }
-        public bool IsSpecial { get; private set; }
-        private Random rand = new Random();
+        public Position Pos { get; private set; }  // Position des Essens
+        public bool IsSpecial { get; private set; }  // Gibt an, ob es sich um ein Spezial-Essen (Stern) handelt
+        private Random rand = new Random();  // Zufallszahlengenerator für die Position und die Art des Essens
 
-        public void Spawn(int width, int height, List<Position> snakeBody)
+        public void Spawn(int width, int height, List<Position> snakeBody)  // Methode zum Erzeugen eines neuen Essens an einer zufälligen Position, die nicht von der Schlange besetzt ist
         {
             do
             {
@@ -22,7 +22,7 @@ namespace SnakeGame
             IsSpecial = rand.Next(0, 10) == 0;
         }
 
-        public void Draw(int offsetTop)
+        public void Draw(int offsetTop)   // Methode zum Zeichnen des Essens auf der Konsole, abhängig davon, ob es sich um ein Spezial-Essen handelt oder nicht
         {
             if (IsSpecial)
             {
